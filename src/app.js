@@ -1,21 +1,28 @@
 
-import angular, {
-    element,
-    bootstrap
-} from "angular";
+import angular from "angular";
 
-//Ctrl's
 import loginController from "./login/controllers/signinController";
+import detailBookController from  "./books/controllers/detailController";
+import listBookController from  "./books/controllers/listController";
+import bookMasterController from "./master/book/bookMasterController"
+
+import bookService from "./books/services/bookService";
+
 import appRouteConfig from "./configs/routeConfig"
 import uiRouter from "angular-ui-router";
 
-const app = angular.module('app', [uiRouter]);
+import ngMaterial from "angular-material";
+import "angular-material/angular-material.css";
+
+const app = angular.module('app', [uiRouter, ngMaterial]);
 
 app.controller("loginController", loginController);
-app.config(appRouteConfig);
+app.controller("bookMasterController", bookMasterController);
+app.controller("listBookController", listBookController);
+app.controller("detailBookController", detailBookController);
 
-element(document).ready(() => {
-    bootstrap(document, ["app"])
-})
+app.service("bookService", bookService);
+
+app.config(appRouteConfig);
 
 export default app;

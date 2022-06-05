@@ -1,9 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const PATH = { 
+const PATH = {
     dist: path.resolve(__dirname, 'dist'),
-    lib:  path.resolve(__dirname, 'dist/lib')
+    lib: path.resolve(__dirname, 'dist/lib')
 };
 
 module.exports = {
@@ -30,7 +30,16 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                loader: "html-loader"
+                loader: "html-loader",
+                exclude: /node_modules/
+            },
+            {
+                test: /\.xml$/,
+                loader: 'xml-loader',
+                exclude: /node_modules/
+            }, {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
             }
         ]
     },
@@ -38,7 +47,7 @@ module.exports = {
         colors: true
     },
     devServer: {
-        static: { directory:PATH.dist },
+        static: { directory: PATH.dist },
         open: true,
         hot: true,
         watchFiles: ["src/**/**"],

@@ -6,9 +6,8 @@ function signinController($state){
 
     var self = this;
     
-    self.signin = function(){
-        alert('aqui')
-        $state.go('teste')
+    self.signin = function() {
+        $state.go('book.list')
     }
 }
 
