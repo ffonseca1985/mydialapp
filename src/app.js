@@ -12,9 +12,13 @@ import appRouteConfig from "./configs/routeConfig"
 import uiRouter from "angular-ui-router";
 
 import ngMaterial from "angular-material";
-import "angular-material/angular-material.css";
+import ngMessages  from "angular-messages";
+import ngBootstrap from "angular-ui-bootstrap"
 
-const app = angular.module('app', [uiRouter, ngMaterial]);
+import "angular-material/angular-material.css";
+import "bootstrap/dist/css/bootstrap.css"
+
+const app = angular.module('app', [uiRouter, ngMaterial, ngMessages, ngBootstrap]);
 
 app.controller("loginController", loginController);
 app.controller("bookMasterController", bookMasterController);

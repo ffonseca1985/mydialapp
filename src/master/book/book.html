@@ -1,6 +1,15 @@
-<header>
-    <h2>Sistema de gerenciamento de Login</h2>
-    <h3>Curso LGroup <=> LOGIN</h3>
-</header>
+<md-content class="md-padding">
+    <md-nav-bar
+      md-no-ink-bar="disableInkBar"
+      md-selected-nav-item="currentNavItem"
+      nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-click="goto('page1')">
+        Books
+      </md-nav-item>
+   
+    </md-nav-bar>
+    <div class="ext-content">
+        <ui-view></ui-view>
+    </div>
+  </md-content>
 <!--equivalente o renderBody do MVC-->
-<ui-view></ui-view>
