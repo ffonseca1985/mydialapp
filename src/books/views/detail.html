@@ -6,12 +6,38 @@
         <md-card-title>
             <md-card-title-text>
                 <div>
+                    <span class="fw-bold">ID:</span>
+                    <span>{{vm.contact.CustomerID[0]}}</span>
+                </div>
+
+                <div>
                     <span class="fw-bold">Name:</span>
                     <span>{{vm.contact.ContactName[0]}}</span>
+                </div>
+
+                <div>
+                    <span class="fw-bold">Contact Title:</span>
+                    <span>{{vm.contact.ContactTitle[0]}}</span>
                 </div>
                 <div>
                     <span class="fw-bold">Company Name:</span>
                     <span>{{vm.contact.CompanyName[0]}}</span>
+                </div>
+                <div>
+                    <span class="fw-bold">Address:</span>
+                    <span>{{vm.contact.Address[0]}}</span>
+                </div>
+                <div>
+                    <span class="fw-bold">Postal Code:</span>
+                    <span>{{vm.contact.PostalCode[0]}}</span>
+                </div>
+                <div>
+                    <span class="fw-bold">City:</span>
+                    <span>{{vm.contact.City[0]}}</span>
+                </div>
+                <div>
+                    <span class="fw-bold">Country:</span>
+                    <span>{{vm.contact.Country[0]}}</span>
                 </div>
                 <div>
                     <span class="fw-bold">Email:</span>
@@ -21,10 +47,14 @@
                     <span class="fw-bold">Phone:</span>
                     <span>{{vm.contact.Phone[0]}}</span>
                 </div>
+                <div>
+                    <span class="fw-bold">Fax:</span>
+                    <span>{{vm.contact.Fax[0]}}</span>
+                </div>
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
             <md-button ng-click="vm.back()">Back</md-button>
-          </md-card-actions>
+        </md-card-actions>
     </md-card>
 </div>

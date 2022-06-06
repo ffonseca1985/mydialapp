@@ -6,6 +6,8 @@ import detailBookController from  "./books/controllers/detailController";
 import listBookController from  "./books/controllers/listController";
 import bookMasterController from "./master/book/bookMasterController"
 
+import bookFilter  from "./books/filters/bookFilter"
+
 import bookService from "./books/services/bookService";
 
 import appRouteConfig from "./configs/routeConfig"
@@ -26,6 +28,7 @@ app.controller("listBookController", listBookController);
 app.controller("detailBookController", detailBookController);
 
 app.service("bookService", bookService);
+app.filter("bookFilter", bookFilter);
 
 app.config(appRouteConfig);
 
