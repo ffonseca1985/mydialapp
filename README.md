@@ -1,5 +1,5 @@
 # Prject My Dial App
-angular 1.x, es6, Material UI, Boostrasp and webpack 5 
+angular 1.x, es6, Material UI, Boostrasp, docker and webpack 5 
 
 ## step by step:
 
