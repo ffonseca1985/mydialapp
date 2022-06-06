@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack",
-    "start": "npm run webpack && webpack-dev-server"
+    "build": "webpack",
+    "start": "npm run build && webpack-dev-server"
   },
   "author": "fabio fonseca",
   "license": "ISC",
