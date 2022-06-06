@@ -3,8 +3,11 @@
       md-no-ink-bar="disableInkBar"
       md-selected-nav-item="currentNavItem"
       nav-bar-aria-label="navigation links">
-      <md-nav-item md-nav-click="goto('page1')">
+      <md-nav-item  md-nav-click="vm.redirects['books']()">
         Books
+      </md-nav-item>
+      <md-nav-item md-nav-click="vm.redirects['logout']()">
+        Logout
       </md-nav-item>
    
     </md-nav-bar>
