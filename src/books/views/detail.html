@@ -1,0 +1,30 @@
+<div class="container mt-5">
+
+    <h1>Book Detail</h1>
+
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <div>
+                    <span class="fw-bold">Name:</span>
+                    <span>{{vm.contact.ContactName[0]}}</span>
+                </div>
+                <div>
+                    <span class="fw-bold">Company Name:</span>
+                    <span>{{vm.contact.CompanyName[0]}}</span>
+                </div>
+                <div>
+                    <span class="fw-bold">Email:</span>
+                    <span>{{vm.contact.Email[0]}}</span>
+                </div>
+                <div>
+                    <span class="fw-bold">Phone:</span>
+                    <span>{{vm.contact.Phone[0]}}</span>
+                </div>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="vm.back()">Back</md-button>
+          </md-card-actions>
+    </md-card>
+</div>

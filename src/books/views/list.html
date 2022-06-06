@@ -2,7 +2,16 @@
 
   <h1>Books</h1>
 
-  <div class="table-responsive  mt-5">
+  <md-input-container>
+    <label>Visualizations</label>
+    <md-select ng-model="vm.visualizationState">
+      <md-option ng-value="state.id" ng-repeat="state in vm.visualizations">
+        {{state.name}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+
+  <div class="table-responsive  mt-5" ng-show="vm.visualizationState == 2">
     <table class="table table-striped table-hover table-sm">
       <thead>
         <tr class="bg-primary">
@@ -17,35 +26,41 @@
           <td>{{body.CompanyName[0]}}</td>
           <td>{{body.Email[0]}}</td>
           <td>{{body.Phone[0]}}</td>
-          <td><md-button class="md-primary md-hue-2">Details</md-button></td>
+          <td>
+            <md-button class="md-primary md-hue-2" ng-click="vm.redirectDetails(body.CustomerID[0])">
+              Details
+            </md-button>
+          </td>
         </tr>
       </thead>
     </table>
   </div>
 
-  <md-card md-theme-watch ng-repeat="body in vm.contacts">
-    <md-card-title>
-      <md-card-title-text>
-        <div>
-          <span class="fw-bold">Name:</span>
-          <span>{{body.ContactName[0]}}</span>
-        </div>
-        <div>
-          <span class="fw-bold">Company Name:</span>
-          <span>{{body.CompanyName[0]}}</span>
-        </div>
-        <div>
-          <span class="fw-bold">Email:</span>
-          <span>{{body.Email[0]}}</span>
-        </div>
-        <div>
-          <span class="fw-bold">Phone:</span>
-          <span>{{body.Phone[0]}}</span>
-        </div>
-      </md-card-title-text>
-    </md-card-title>
-    <md-card-actions layout="row" layout-align="end center">
-      <md-button>Detail</md-button>
-    </md-card-actions>
-  </md-card>
+  <div ng-show="vm.visualizationState == 1">
+    <md-card md-theme-watch ng-repeat="body in vm.contacts">
+      <md-card-title>
+        <md-card-title-text>
+          <div>
+            <span class="fw-bold">Name:</span>
+            <span>{{body.ContactName[0]}}</span>
+          </div>
+          <div>
+            <span class="fw-bold">Company Name:</span>
+            <span>{{body.CompanyName[0]}}</span>
+          </div>
+          <div>
+            <span class="fw-bold">Email:</span>
+            <span>{{body.Email[0]}}</span>
+          </div>
+          <div>
+            <span class="fw-bold">Phone:</span>
+            <span>{{body.Phone[0]}}</span>
+          </div>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="vm.redirectDetails(body.CustomerID[0])">Detail</md-button>
+      </md-card-actions>
+    </md-card>
+  </div>
 </div>

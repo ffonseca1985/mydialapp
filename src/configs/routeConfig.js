@@ -5,7 +5,6 @@ import siginHtml from  "../login/views/index.html";
 import listBookHtml from "../books/views/list.html";
 import detailBookHtml from "../books/views/detail.html";
 
-
 appRouteConfig.$inject = ['$stateProvider', "$urlRouterProvider", '$locationProvider'];
 
 function appRouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -17,30 +16,26 @@ function appRouteConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         controller: "loginController",
         abstract: true,
         url: "/login"
-    }).state('login.signin', { //Padrão: 'master.pagina'
-        // a url ficará assim: /login/signin//
+    }).state('login.signin', { 
         template: siginHtml,
         controller: 'loginController',
-        controllerAs: 'vm',//colocamos alias, pois estamos usando o this na controller
+        controllerAs: 'vm',
         url: '/signin'
-    }).state('book', { //Padrão: 'master.pagina'
-        // a url ficará assim: /login/signin//
+    }).state('book', { 
         template: bookMasterHtml,
         controller: 'bookMasterController',
-        controllerAs: 'vm',//colocamos alias, pois estamos usando o this na controller
+        controllerAs: 'vm',
         url: '/book'
-    }).state('book.list', { //Padrão: 'master.pagina'
-        // a url ficará assim: /login/signin//
+    }).state('book.list', {
         template: listBookHtml,
         controller: 'listBookController',
-        controllerAs: 'vm',//colocamos alias, pois estamos usando o this na controller
+        controllerAs: 'vm',
         url: '/list'
-    }).state('book.detail', { //Padrão: 'master.pagina'
-        // a url ficará assim: /login/signin//
+    }).state('book.detail', {
         template: detailBookHtml,
         controller: 'detailBookController',
-        controllerAs: 'vm',//colocamos alias, pois estamos usando o this na controller
-        url: '/detail:id'
+        controllerAs: 'vm',
+        url: '/detail/:id'
     });
 
     $locationProvider.html5Mode(false);

@@ -14,7 +14,7 @@ function bookService () {
         try {
 
             let allBooks = self.get();
-            let filter = allBooks.find(x => x.id == id);
+            let filter = allBooks.AddressBook.Contact.find(x => x.CustomerID == id);
     
             return filter;
         } 
